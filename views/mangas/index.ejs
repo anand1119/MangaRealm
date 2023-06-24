@@ -1,0 +1,24 @@
+<% layout("layouts/boilerplate") %>
+<h1 class="text-light">All Mangas</h1>
+<div class="mb-3">
+    <a class="btn btn-primary" href="/mangas/new">Add Manga</a>
+</div>
+<% for (let manga of mangas) { %>
+    <div class="card mb-3">
+        <div class="row">
+          <div class="col-md-4">
+            <img class="img-fluid mt-2 ms-2 me-2 mb-2" alt="" src="<%= manga.images[0].url %>" width="300" height="300">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><%= manga.title %></h5>
+                <p class="card-text"><%= manga.description%></p>
+                <p class="card-text">
+                    <small class="text-muted"><%= manga.location%></small>
+                </p>
+                <a href="/mangas/<%=manga._id%>" class="btn btn-primary">View <%= manga.title%></a>
+            </div>
+            </div>
+        </div>
+     </div>
+<% } %>

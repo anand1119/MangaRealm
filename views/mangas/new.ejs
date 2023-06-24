@@ -1,0 +1,55 @@
+<% layout("layouts/boilerplate") %>
+<div class="row">
+    <h1 class="text-center">New Manga</h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="/mangas" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="manga[title]" required/>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="manga[location]" required/>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <!-- <div class="mb-3">
+                <label class="form-label" for="image">Image URL</label>
+                <input class="form-control" type="text" id="image" name="manga[image]" required/>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div> -->
+            <div class="mb-3">
+                <label class="form-label" for="price">Cost/Volume</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="price"
+                        placeholder="0.00" aria-describedby="price-label" name="manga[price]" required/>
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" id="description" name="manga[description]" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload Image(s)...</label>
+                <input class="form-control" type="file" id="image" name="image" multiple>
+              </div>
+            <div class="mb-3">
+                    <button class="btn btn-success">Add Manga</button>
+            </div>
+        </form>
+    </div>
+</div>
+
